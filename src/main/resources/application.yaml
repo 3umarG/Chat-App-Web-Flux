@@ -1,0 +1,27 @@
+server:
+  port: 8000
+
+spring:
+  data:
+    mongodb:
+      #      uri: mongodb://localhost:27017/chat_app_db?authSource=admin
+      username: root
+      password: example
+      host: localhost
+      port: 27017
+      database: chat_app_db
+      authentication-database: admin
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  ## swaager related
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
