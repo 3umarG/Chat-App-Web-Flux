@@ -1,15 +1,18 @@
 package com.chat.api.models
 
 import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
 import java.util.*
 
 @Document(collection = "messages")
 class Message(
-    private val userId: String? = null,
-    private val username: String? = null,
-    private val message: String? = null,
-    private val timestamp: Date? = null,
+    val userId: String? = null,
+    val username: String? = null,
+    val message: String? = null,
+    val channelId: String? = null,
+    @Indexed
+    var timestamp: Date? = null,
     @Id
-    private val id: String? = null
+    val id: String? = null
 )
